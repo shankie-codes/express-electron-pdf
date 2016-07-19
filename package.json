@@ -1,0 +1,24 @@
+{
+  "name": "proper-pdf",
+  "version": "1.0.0",
+  "description": "Simple express server to make a PDF",
+  "author": "Andrew Shankie <andrew@properdesign.rs>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "standard": "^6.0.6"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "minimist": "^1.2.0",
+    "electron-prebuilt": "^1.2.2",
+    "github-markdown-css": "^2.0.9",
+    "highlight.js": "^9.0.0",
+    "marked": "^0.3.5",
+    "minimist": "^1.2.0",
+    "object-assign": "^4.0.1",
+    "uuid": "^2.0.1"
+  }
+}
