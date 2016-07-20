@@ -1,4 +1,4 @@
-name := proper-pdf
+name := express-electron-pdf
 image_name := properdesign/$(name)
 # FLAGS = -v $(PWD)/sandbox:/source \
         --name $(name)

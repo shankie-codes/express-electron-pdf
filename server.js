@@ -7,6 +7,9 @@ const exec = require("child_process").exec;
 const PORT = (process.env.PORT || 8080);
 const SECURITY_TOKEN = (process.env.TOKEN || 'im-a-placholder-that-you-should-set-using-env-vars');
 
+const os = require(“os”);
+const hostname = os.hostname();
+
 // Accept SIGINT from Docker ctrl-c
 process.on('SIGINT', function() {
     process.exit();
@@ -33,6 +36,5 @@ app.get('/', function(req, res){
   }
 });
 
-
 app.listen(PORT);
-console.log('Running on http://localhost:' + PORT);
+console.log(`express-electron-pdf running on ${hostname}:${PORT}`);
