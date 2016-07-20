@@ -5,7 +5,8 @@ const exec = require("child_process").exec;
 // const electronPdf = require('./electron-pdf');
 
 // Constants
-const PORT = 8080;
+const PORT = (process.env.PORT || 8080);
+const SECURITY_TOKEN = 'SOSJkSkf8LJeIGdTuOzvwhfbKJOOr2';
 
 // Accept SIGINT from Docker ctrl-c
 process.on('SIGINT', function() {
@@ -19,11 +20,15 @@ app.get('/', function (req, res) {
 });
 
 app.get('/pdf', function(req, res){
-  res.send('Waiting... ');
-  exec("Xvfb -ac -screen scrn 1280x2000x24 :9.0 & export DISPLAY=:9.0 && electron-pdf http://properdesign.rs/terms /www/terms2.pdf", function(error, stdout, stderr) {
-    console.log('Done!', error, stdout, stderr);
-
-  })
+  if (req.query.token === SECURITY_TOKEN) {
+    res.send('Generating... ');
+    exec("Xvfb -ac -screen scrn 1280x2000x24 :9.0 & export DISPLAY=:9.0 && electron-pdf http://properdesign.rs/terms /www/terms2.pdf", function(error, stdout, stderr) {
+      console.log('Done!', error, stdout, stderr);
+    });
+  }
+  else{
+    res.sendStatus(401);
+  }
 });
 
 
