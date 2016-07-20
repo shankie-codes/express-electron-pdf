@@ -1,6 +1,6 @@
 # express-electron-pdf
 
-An Express server wrapped around @fraserxu 's excellecnt [Electron PDF](https://github.com/fraserxu/electron-pdf).
+An Express server wrapped around [@fraserxu](https://github.com/fraserxu)'s excellent [Electron PDF](https://github.com/fraserxu/electron-pdf).
 
 Currently takes a minute or two to generate a PDF – probably due to the fact that this is spinning up a new instance of Electron (Chromium) with every request.
 
