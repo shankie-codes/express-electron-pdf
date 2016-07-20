@@ -5,7 +5,7 @@ const exec = require("child_process").exec;
 
 // Constants
 const PORT = (process.env.PORT || 8080);
-const SECURITY_TOKEN = (process.env.TOKEN || 'im-a-placholder-that-you-should-set-using-env-vars');
+const SECURITY_TOKEN = (process.env.TOKEN || 'yoursecrettoken');
 
 const os = require("os");
 const hostname = os.hostname();
@@ -22,7 +22,8 @@ app.get('/', function(req, res){
   if (req.query.token === SECURITY_TOKEN) {
     if(req.query.url){
       // res.send('Generating... ');
-      exec(`Xvfb -ac -screen scrn 1280x2000x24 :9.0 & export DISPLAY=:9.0 && electron-pdf ${req.query.url} /www/output.pdf`, function(error, stdout, stderr) {
+      // exec(`Xvfb -ac -screen scrn 1280x2000x24 :9.0 & export DISPLAY=:9.0 && electron-pdf ${req.query.url} /www/output.pdf`, function(error, stdout, stderr) {
+      exec(`xvfb-run -a electron-pdf ${req.query.url} /www/output.pdf`, function(error, stdout, stderr) {
         res.download('/www/output.pdf', (req.query.filename || 'output') + '.pdf');
       });
     }

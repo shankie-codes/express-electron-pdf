@@ -6,7 +6,7 @@ image_name := properdesign/$(name)
 FLAGS = --name $(name)
 
 DOCKER := docker
-DOCKER_TASK := $(DOCKER) run --rm -ti -p 49160:8080
+DOCKER_TASK := $(DOCKER) run --rm -ti -p 8080:8080
 DOCKER_PROC := $(DOCKER) run -d -ti
 
 build:

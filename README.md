@@ -32,3 +32,5 @@ You can specify your own filename (without the PDF extension) using `filename=yo
 
 * Custom stylesheets
 * Handling for multiple displays using `xvfb-run -a [mycommand]`
+* General making it a more full-functioning webserver, handling bum requests etc.
+* Handling for multiple files being generated at the same time (not using `output.pdf`)
