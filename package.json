@@ -1,7 +1,7 @@
 {
   "name": "proper-pdf",
-  "version": "1.0.0",
-  "description": "Simple express server to make a PDF",
+  "version": "0.1.0",
+  "description": "Simple Express server to make a PDF",
   "author": "Andrew Shankie <andrew@properdesign.rs>",
   "main": "server.js",
   "scripts": {
