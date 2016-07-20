@@ -2,7 +2,6 @@
 
 const express = require('express');
 const exec = require("child_process").exec;
-// const electronPdf = require('./electron-pdf');
 
 // Constants
 const PORT = (process.env.PORT || 8080);
@@ -15,11 +14,8 @@ process.on('SIGINT', function() {
 
 // App
 const app = express();
-app.get('/', function (req, res) {
-  res.send('Hello world\n');
-});
 
-app.get('/pdf', function(req, res){
+app.get('/', function(req, res){
   if (req.query.token === SECURITY_TOKEN) {
     if(req.query.url){
       // res.send('Generating... ');
