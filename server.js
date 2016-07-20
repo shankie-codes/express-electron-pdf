@@ -7,7 +7,7 @@ const exec = require("child_process").exec;
 const PORT = (process.env.PORT || 8080);
 const SECURITY_TOKEN = (process.env.TOKEN || 'im-a-placholder-that-you-should-set-using-env-vars');
 
-const os = require(“os”);
+const os = require("os");
 const hostname = os.hostname();
 
 // Accept SIGINT from Docker ctrl-c
